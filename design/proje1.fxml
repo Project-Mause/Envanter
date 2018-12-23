@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller_Index">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="İşlemler">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#menuitm_urunekle" text="Ürün Ekle">
+                <graphic>
+                    <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/Resimler/add.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+
+                          </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#menuitm_katekle" text="Kategori Ekle">
+                      <graphic>
+                          <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@/Resimler/add.png" />
+                              </image>
+                          </ImageView>
+                      </graphic>
+
+                        </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#menuItem_res" text="Tabloyu Güncelle" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Hakkında">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TableView fx:id="tableview" prefHeight="375.0" prefWidth="640.0" style="-fx-background-color: #FFFFFF;">
+               <columns>
+                  <TableColumn fx:id="tablec_urunadi" prefWidth="182.4000244140625" text="Ürün Adi" />
+                  <TableColumn fx:id="tablec_kategori" prefWidth="145.5999755859375" text="Kategori" />
+                  <TableColumn fx:id="tablec_miktar" prefWidth="142.4000244140625" text="Miktari" />
+                  <TableColumn fx:id="tablec_tarih" prefWidth="167.199951171875" text="Tarihi" />
+               </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Düzenle" />
+                        <MenuItem mnemonicParsing="false" text="Sil" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

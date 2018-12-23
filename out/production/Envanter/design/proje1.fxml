@@ -1,22 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller_Index">
+<VBox prefHeight="401.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller_Index">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
-        <Menu mnemonicParsing="false" text="Dosya">
+        <Menu mnemonicParsing="false" text="İşlemler">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#menuitm_urunekle" text="Ürün Ekle" />
-                  <MenuItem mnemonicParsing="false" onAction="#menuitm_katekle" text="Kategori Ekle" />
+                  <Menu mnemonicParsing="false" text="Ürün">
+                    <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuitm_urunekle" text="Ürün Ekle">
+                      <graphic>
+                          <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@/Resimler/add.png" />
+                              </image>
+                          </ImageView>
+                      </graphic>
+      
+                                </MenuItem>
+                    </items>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/Resimler/Product.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Kategori">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#menuitm_katekle" text="Kategori Ekle">
+                            <graphic>
+                                <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/Resimler/add.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+      
+                              </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#menuitm_katesil" text="Kategori Sil">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/Resimler/Remove.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#menuitm_katduzenle" text="Kategori Düzenle">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/Resimler/Update.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/Resimler/Category.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#menuItem_res" text="Tabloyu Güncelle">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/Resimler/Update.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Hakkında">
@@ -24,24 +92,29 @@
             <MenuItem mnemonicParsing="false" text="Unselect All" />
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Yardım">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-          </items>
-        </Menu>
       </menus>
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <TableView prefHeight="327.0" prefWidth="640.0">
+            <TableView fx:id="tableview" prefHeight="375.0" prefWidth="693.0" style="-fx-background-color: #FFFFFF;">
                <columns>
-                  <TableColumn prefWidth="182.4000244140625" text="Ürün Adı" />
-                  <TableColumn prefWidth="145.5999755859375" text="Kategori" />
-                  <TableColumn prefWidth="142.4000244140625" text="Miktarı" />
-                  <TableColumn prefWidth="167.199951171875" text="Tarih" />
+                  <TableColumn fx:id="tablec_urunadi" prefWidth="182.4000244140625" text="Ürün Adi" />
+                  <TableColumn fx:id="tablec_kategori" prefWidth="145.5999755859375" text="Kategori" />
+                  <TableColumn fx:id="tablec_miktar" prefWidth="72.79998779296875" text="Miktari" />
+                  <TableColumn fx:id="tablec_birim" prefWidth="94.39996337890625" text="Birim" />
+                  <TableColumn fx:id="tablec_tarih" prefWidth="219.20004272460938" text="Tarihi" />
                </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#conmen_Ekle" text="Ekle" />
+                        <MenuItem mnemonicParsing="false" onAction="#conmen_Duzenle" text="Düzenle" />
+                        <MenuItem mnemonicParsing="false" onAction="#conmen_Sil" text="Sil" />
+                        <MenuItem mnemonicParsing="false" onAction="#conmen_Guncelle" text="Guncelle" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
             </TableView>
-            <JFXButton layoutX="254.0" layoutY="327.0" onAction="#btn_kayitekrani" prefHeight="47.0" prefWidth="131.0" text="Ürün Ekle" />
       </children>
     </AnchorPane>
   </children>

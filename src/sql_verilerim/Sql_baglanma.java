@@ -17,7 +17,6 @@ public class Sql_baglanma
 
     public Connection connection;
 
-
     /*sqlite bağlanması*/
     public boolean veritabaninaBaglanma()
     {

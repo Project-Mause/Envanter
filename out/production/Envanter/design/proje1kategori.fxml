@@ -3,12 +3,23 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="253.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller_Kategori">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="260.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller_KategoriEkle">
    <children>
-      <JFXTextField fx:id="txt_kategori" layoutX="59.0" layoutY="39.0" />
-      <Label layoutX="104.0" layoutY="22.0" text="Kategori" />
-      <JFXButton layoutX="86.0" layoutY="85.0" onAction="#btn_kategoriekle" prefHeight="55.0" prefWidth="81.0" text="Ekle" />
+      <JFXTextField fx:id="txt_kategori" layoutX="100.0" layoutY="31.0" />
+      <Label layoutX="14.0" layoutY="43.0" text="Kategori Adı:" />
+      <JFXButton layoutX="21.0" layoutY="85.0" onAction="#btn_kategoriekle" prefHeight="39.0" prefWidth="218.0" style="-fx-background-color: #DCDCDC;" text="Ekle">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/Resimler/check.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label fx:id="lbl_islem" layoutX="62.0" layoutY="138.0" />
    </children>
 </Pane>

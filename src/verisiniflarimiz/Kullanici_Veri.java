@@ -2,17 +2,17 @@ package verisiniflarimiz;
 
 public class Kullanici_Veri
 {
-    public String kullaniciId;
+    public int kullaniciId;
     public String kullaniciIsim;
     public String kullaniciSoyisim;
     public String kullaniciAdi;
     public String kullaniciSifresi;
 
-    public String getKullaniciId() {
+    public int getKullaniciId() {
         return kullaniciId;
     }
 
-    public void setKullaniciId(String kullaniciId) {
+    public void setKullaniciId(int kullaniciId) {
         this.kullaniciId = kullaniciId;
     }
 

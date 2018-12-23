@@ -55,11 +55,12 @@ public class Controller_Kayitol
             //kontrol if şartına sokarak islemin saglanıp sağlanamadığını kontrol ediyor
             if(kontrol) {
                 //Herşey doğru ise giriş ekranına döner.
-                Screenbox.getInstance().Screenboxing(girisUrl,event,"Giriş Ekranı");
+                Screenbox.getInstance().Screenboxing(girisUrl,event,"Giriş Ekranı","/Resimler/ProjeLogoo.jpg");
             }
         }
         //degerKontrol eğer boşsa ekrana mesaj cıkarmasını saglandı
         else{
+            //Ekrana mesaj çıkartma parametreleri.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Hata");
             alert.setHeaderText(null);
@@ -67,7 +68,6 @@ public class Controller_Kayitol
             alert.showAndWait();
         }
     }
-
 
     //isim textfield içinde 50 karakterden fazla isim icerip icermediğini kontrol ediyor
     @FXML
@@ -97,6 +97,5 @@ public class Controller_Kayitol
         check=JFXTextField_Check.getInstance().Check(txt_ksifre);
         return check;
     }
-
 
 }
